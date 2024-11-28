@@ -25,5 +25,14 @@ class ReceitaController extends Controller
         return view("cadastro_receita");
     }
 
+    public function deletar($id) {
+        $receita = new Receita;
+
+        $receita->find($id)->delete();
+
+        return redirect('/listar_receitas');
+
+    }
+
 
 }

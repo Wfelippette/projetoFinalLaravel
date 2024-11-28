@@ -13,12 +13,20 @@
   <table border="1">
     <tr>
       <th>Nome da Receita</th>
+    </tr>  
       @foreach ($receitas as $receita)
-        <tr>
+      <tr>
           <td>{{$receita->descricao}}</td>
+          <td>
+            <form method="POST" action="/deletar_receita/{{$receita->id}}">
+              @csrf
+              {{ method_field("DELETE") }}
+              <input type="submit" value="delete receita">
+            </form>
+          </td>
         </tr>
       @endforeach
-    </tr>
+    
   </table>       
   @endif
 

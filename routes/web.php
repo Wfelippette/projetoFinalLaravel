@@ -12,12 +12,16 @@ Route::get('/listar_receitas', [ReceitaController::class, 'listar']);
 
 Route::post('/criar_receita', [ReceitaController::class, 'criar']);
 
+Route::delete("/deletar_receita/{id}", [ReceitaController::class, 'deletar']);
+
 // Rotas produto
 Route::get('/cadastro_produto', [ProdutoController::class, "formCriarProduto"]);
 
 Route::post('/criar_produto', [ProdutoController::class, 'criar']);
 
 Route::get('/listar_produtos', [ProdutoController::class, 'listar']);
+
+Route::delete("/deletar_produto/{id}", [ProdutoController::class, 'deletar']);
 
 // App
 Route::get('/', [AppController::class, 'inicial']);
